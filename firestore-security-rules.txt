@@ -23,5 +23,16 @@ service cloud.firestore {
     match /testResults/{document=**} {
       allow read: if request.auth != null;
     }
+    
+    // Allow users to read and write their own test status
+    match /userTestStatus/{userId} {
+      allow read, write: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+    }
+    
+    // Allow authenticated users to read all test statuses for admin purposes
+    match /userTestStatus/{document=**} {
+      allow read: if request.auth != null;
+    }
   }
 }

@@ -176,9 +176,9 @@ function App() {
   // Show loading screen while checking authentication
   if (isCheckingAuth) {
     return (
-      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black flex items-center justify-center">
+      <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center justify-center">
         <div className="text-center">
-          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mb-4 animate-pulse">
+          <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-600 to-cyan-600 rounded-full mb-4 animate-pulse">
             <GraduationCap className="w-8 h-8 text-white" />
           </div>
           <p className="text-white text-lg">Loading...</p>
@@ -200,27 +200,33 @@ function App() {
 
   // Show login/signup form if not authenticated
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-black flex items-center justify-center p-4 relative overflow-hidden">
+    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-blue-900 to-black flex items-center justify-center p-4 relative overflow-hidden">
       {/* Animated Background Elements */}
       <div className="absolute inset-0 overflow-hidden">
-        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-purple-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
+        <div className="absolute top-1/4 left-1/4 w-64 h-64 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse"></div>
         <div className="absolute top-3/4 right-1/4 w-72 h-72 bg-blue-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-1000"></div>
-        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-indigo-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-80 h-80 bg-cyan-600 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-pulse delay-2000"></div>
       </div>
 
       {/* Main Card */}
       <div className="relative z-10 w-full max-w-md">
-        <div className="bg-black bg-opacity-40 backdrop-blur-xl rounded-2xl shadow-2xl border border-purple-500/20 p-6 sm:p-8 mx-4 sm:mx-0">
+        <div className="bg-black bg-opacity-40 backdrop-blur-xl rounded-2xl shadow-2xl border border-blue-500/20 p-6 sm:p-8 mx-4 sm:mx-0">
           {/* Header */}
           <div className="text-center mb-6 sm:mb-8">
-            <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-purple-600 to-blue-600 rounded-full mb-4">
-              <GraduationCap className="w-8 h-8 text-white" />
+            <div className="inline-flex items-center justify-center w-16 h-16  mb-4">
+              <img
+  src="https://istetiet.com/assets/logo-CN11VS0g.png"  // replace with your image URL or path
+  alt="Graduation Cap"
+  className="w-8 h-8"            // same width and height as before
+  style={{ filter: 'brightness(0) invert(1)' }} // optional: to make the image white like text-white
+/>
+
             </div>
             <h1 className="text-2xl sm:text-3xl font-bold text-white mb-2">
-              {isLogin ? 'Welcome Back' : 'Join Our Society'}
+              {isLogin ? 'Welcome Back' : 'Join ISTE'}
             </h1>
             <p className="text-gray-300 text-xs sm:text-sm">
-              {isLogin ? 'Sign in to your recruitment portal' : 'Create your recruitment account'}
+              {isLogin ? 'Sign in' : 'Create your account'}
             </p>
           </div>
 
@@ -237,13 +243,13 @@ function App() {
             {!isLogin && (
               <div className="transition-all duration-300 ease-in-out">
                 <div className="relative">
-                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+                  <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
                   <input
                     type="text"
                     placeholder="Full Name"
                     value={formData.name}
                     onChange={(e) => handleInputChange('name', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                 </div>
                 {errors.name && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.name}</p>}
@@ -253,13 +259,13 @@ function App() {
             {/* Email Field */}
             <div className="transition-all duration-300 ease-in-out">
               <div className="relative">
-                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+                <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
                 <input
                   type="email"
                   placeholder="Email Address"
                   value={formData.email}
                   onChange={(e) => handleInputChange('email', e.target.value)}
-                  className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                  className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                 />
               </div>
               {errors.email && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.email}</p>}
@@ -269,14 +275,14 @@ function App() {
             {!isLogin && (
               <div className="transition-all duration-300 ease-in-out">
                 <div className="relative">
-                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+                  <Phone className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
                   <input
                     type="tel"
                     placeholder="Phone Number"
                     maxLength={10}
                     value={formData.phone}
                     onChange={(e) => handleInputChange('phone', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                 </div>
                 {errors.phone && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.phone}</p>}
@@ -287,14 +293,14 @@ function App() {
             {!isLogin && (
               <div className="transition-all duration-300 ease-in-out">
                 <div className="relative">
-                  <Hash className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+                  <Hash className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
                   <input
                     type="text"
                     placeholder="Admission Number"
                     maxLength={6}
                     value={formData.admissionNumber}
                     onChange={(e) => handleInputChange('admissionNumber', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                 </div>
                 {errors.admissionNumber && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.admissionNumber}</p>}
@@ -305,19 +311,14 @@ function App() {
             {!isLogin && (
               <div className="transition-all duration-300 ease-in-out">
                 <div className="relative">
-                  <GraduationCap className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
-                  <select
+                  <GraduationCap className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
+                  <input
+                    type="text"
+                    placeholder="Branch (e.g., Computer Science Engineering)"
                     value={formData.branch}
                     onChange={(e) => handleInputChange('branch', e.target.value)}
-                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 appearance-none text-sm sm:text-base"
-                  >
-                    <option value="">Select Branch</option>
-                    {branches.map((branch) => (
-                      <option key={branch} value={branch} className="bg-gray-800">
-                        {branch}
-                      </option>
-                    ))}
-                  </select>
+                    className="w-full pl-12 pr-4 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                  />
                 </div>
                 {errors.branch && <p className="text-red-400 text-xs sm:text-sm mt-1">{errors.branch}</p>}
               </div>
@@ -326,18 +327,18 @@ function App() {
             {/* Password Field */}
             <div className="transition-all duration-300 ease-in-out">
               <div className="relative">
-                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+                <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
                 <input
                   type={showPassword ? 'text' : 'password'}
                   placeholder="Password"
                   value={formData.password}
                   onChange={(e) => handleInputChange('password', e.target.value)}
-                  className="w-full pl-12 pr-12 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                  className="w-full pl-12 pr-12 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                 />
                 <button
                   type="button"
                   onClick={() => setShowPassword(!showPassword)}
-                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-purple-400 hover:text-purple-300 transition-colors"
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-400 hover:text-blue-300 transition-colors"
                 >
                   {showPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                 </button>
@@ -349,18 +350,18 @@ function App() {
             {!isLogin && (
               <div className="transition-all duration-300 ease-in-out">
                 <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-purple-400 w-5 h-5" />
+                  <Lock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-blue-400 w-5 h-5" />
                   <input
                     type={showConfirmPassword ? 'text' : 'password'}
                     placeholder="Confirm Password"
                     value={formData.confirmPassword}
                     onChange={(e) => handleInputChange('confirmPassword', e.target.value)}
-                    className="w-full pl-12 pr-12 py-3 bg-gray-800 bg-opacity-50 border border-purple-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
+                    className="w-full pl-12 pr-12 py-3 bg-gray-800 bg-opacity-50 border border-blue-500/30 rounded-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all duration-300 text-sm sm:text-base"
                   />
                   <button
                     type="button"
                     onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-purple-400 hover:text-purple-300 transition-colors"
+                    className="absolute right-3 top-1/2 transform -translate-y-1/2 text-blue-400 hover:text-blue-300 transition-colors"
                   >
                     {showConfirmPassword ? <EyeOff className="w-5 h-5" /> : <Eye className="w-5 h-5" />}
                   </button>
@@ -373,7 +374,7 @@ function App() {
             <button
               type="submit"
               disabled={isLoading}
-              className="w-full py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-semibold rounded-lg hover:from-purple-700 hover:to-blue-700 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
+              className="w-full py-3 bg-gradient-to-r from-blue-600 to-cyan-600 text-white font-semibold rounded-lg hover:from-blue-700 hover:to-cyan-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 focus:ring-offset-gray-900 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed text-sm sm:text-base"
             >
               {isLoading ? (isLogin ? 'Signing In...' : 'Creating Account...') : (isLogin ? 'Sign In' : 'Create Account')}
             </button>
@@ -383,7 +384,7 @@ function App() {
               <button
                 type="button"
                 onClick={toggleMode}
-                className="text-purple-400 hover:text-purple-300 transition-colors duration-300 text-xs sm:text-sm"
+                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-xs sm:text-sm"
               >
                 {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
               </button>
