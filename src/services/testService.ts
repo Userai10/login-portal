@@ -54,7 +54,7 @@ export interface UserTestStatus {
 }
 export const testService = {
   getTestSettings: (): TestSettings => ({
-    testStartTime: new Date('2025-08-23T02:36:00'), // Fixed start time for all users
+    testStartTime: new Date('2025-08-23T22:42:00'), // Fixed start time for all users
     testDuration: 60, // 60 minutes
     maxTabSwitches: 5,
     isTestActive: true
@@ -225,15 +225,15 @@ export const testService = {
   getTestQuestions: (): TestQuestion[] => [
     {
       id: '1',
-      question: 'What is the primary purpose of a recruitment test?',
+      question: 'In computer networks, what does IP stand for?',
       options: [
-        'To evaluate technical skills',
-        'To assess overall competency and fit',
-        'To test memory capacity',
-        'To check attendance'
+        'Internet Protocol',
+        'Internal Processing',
+        'Interface Program',
+        'Information Packet'
       ],
       correctAnswer: 1,
-      category: 'General'
+      category: 'Technical'
     },
     {
       id: '2',
@@ -342,7 +342,55 @@ export const testService = {
       ],
       correctAnswer: 3,
       category: 'Technical'
-    }
+    },
+    {
+      id: '12',
+      question: 'What is the output of: (Python Code Snippet) print(2 ** 3 ** 2)',
+      options: [
+        '64',
+        '512',
+        '256',
+        '8'
+      ],
+      correctAnswer: 2,
+      category: 'Technical'
+    },
+    {
+      id: '13',
+      question: 'Which of the following do not touch their hair in EB reel',
+      options: [
+        'Abhinivesh Sharma',
+        'Lakshita Gupta',
+        'Bhavya',
+        'Haryiank Kumra'
+      ],
+      correctAnswer: 1,
+      category: 'Technical'
+    },
+    {
+      id: '14',
+      question: 'Which of the following is a joint secretary of ISTE?',
+      options: [
+        'Lakshita Gupta',
+        'Hariyank Kumra',
+        'Ishaan Sharma',
+        'Abhinivesh Sharma'
+      ],
+      correctAnswer: 4,
+      category: 'General'
+    },
+    {
+      id: '15',
+      question: 'Which of the following is a Core Member?',
+      options: [
+        'Rudraksh',
+        'Navjot',
+        'Happy',
+        'Yuvraj'
+      ],
+      correctAnswer: 4,
+      category: 'General'
+    },
   ],
   async submitTestResult(testResult: Omit<TestResult, 'id'>): Promise<string> {
     try {
