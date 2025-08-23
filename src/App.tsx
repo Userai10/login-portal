@@ -220,7 +220,7 @@ function App() {
   src={isteLogo}  // replace with your image URL or path
   alt="Graduation Cap"
   className="w-8 h-8"            // same width and height as before
-  style={{ filter: 'brightness(0) invert(1)' }} // optional: to make the image white like text-white
+  // style={{ filter: 'brightness(0) invert(1)' }} // optional: to make the image white like text-white
 />
 
             </div>
