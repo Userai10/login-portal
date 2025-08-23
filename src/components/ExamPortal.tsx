@@ -207,8 +207,8 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
                 <Award className="w-6 h-6 text-white" />
               </div>
               <div>
-                <h1 className="text-lg sm:text-xl font-bold text-white">Recruitment Portal</h1>
-                <p className="text-xs sm:text-sm text-gray-300">Society Examination System</p>
+                <h1 className="text-lg sm:text-xl font-bold text-white">ISTE</h1>
+                <p className="text-xs sm:text-sm text-gray-300">Recruitment Portal</p>
               </div>
             </div>
             
@@ -241,7 +241,7 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
               </span>
             </h2>
             <p className="text-base sm:text-lg md:text-xl text-gray-300 max-w-2xl mx-auto px-4">
-              You're about to begin the official recruitment examination. Please read the instructions carefully before proceeding.
+              {/* You're about to begin the official recruitment examination. Please read the instructions carefully before proceeding. */}
             </p>
           </div>
 
