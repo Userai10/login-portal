@@ -215,7 +215,7 @@ function App() {
           <div className="text-center mb-6 sm:mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16  mb-4">
               <img
-  src="../assets/istelogo.png"  // replace with your image URL or path
+  src="istelogo.png"  // replace with your image URL or path
   alt="Graduation Cap"
   className="w-8 h-8"            // same width and height as before
   style={{ filter: 'brightness(0) invert(1)' }} // optional: to make the image white like text-white
