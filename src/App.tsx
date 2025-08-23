@@ -4,6 +4,8 @@ import { Eye, EyeOff, User, Mail, Phone, Hash, GraduationCap, Lock } from 'lucid
 import { authService } from './services/authService';
 import ExamPortal from './components/ExamPortal';
 import type { UserProfile } from './lib/firebase';
+import isteLogo from './assets/istelogo.png';
+
 
 interface FormData {
   name: string;
@@ -215,7 +217,7 @@ function App() {
           <div className="text-center mb-6 sm:mb-8">
             <div className="inline-flex items-center justify-center w-16 h-16  mb-4">
               <img
-  src="istelogo.png"  // replace with your image URL or path
+  src={isteLogo}  // replace with your image URL or path
   alt="Graduation Cap"
   className="w-8 h-8"            // same width and height as before
   style={{ filter: 'brightness(0) invert(1)' }} // optional: to make the image white like text-white
