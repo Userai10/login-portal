@@ -59,6 +59,28 @@ export const testService = {
     maxTabSwitches: 5,
     isTestActive: true
   }),
+
+  // Fisher-Yates shuffle algorithm for randomizing questions
+  shuffleQuestions: (questions: TestQuestion[], userId: string): TestQuestion[] => {
+    // Use userId as seed for consistent randomization per user
+    const seed = userId.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0);
+    
+    // Create a seeded random number generator
+    let random = seed;
+    const seededRandom = () => {
+      random = (random * 9301 + 49297) % 233280;
+      return random / 233280;
+    };
+    
+    const shuffled = [...questions];
+    for (let i = shuffled.length - 1; i > 0; i--) {
+      const j = Math.floor(seededRandom() * (i + 1));
+      [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+    }
+    
+    return shuffled;
+  },
+
   isTestAvailable: (): boolean => {
     const settings = testService.getTestSettings();
     return new Date() >= settings.testStartTime;
@@ -452,6 +474,12 @@ export const testService = {
       category: 'General'
     },
   ],
+
+  getRandomizedTestQuestions: (userId: string): TestQuestion[] => {
+    const baseQuestions = testService.getTestQuestions();
+    return testService.shuffleQuestions(baseQuestions, userId);
+  },
+
   async submitTestResult(testResult: Omit<TestResult, 'id'>): Promise<string> {
     try {
       // Mark test as submitted
