@@ -55,7 +55,7 @@ export interface UserTestStatus {
 export const testService = {
   getTestSettings: (): TestSettings => ({
     testStartTime: new Date('2025-08-30T21:30:00'), // Fixed start time for all users
-    testDuration: 20, // 20 minutes
+    testDuration: 10, // 10 minutes
     maxTabSwitches: 5,
     isTestActive: true
   }),
@@ -225,170 +225,230 @@ export const testService = {
   getTestQuestions: (): TestQuestion[] => [
     {
       id: '1',
-      question: 'In computer networks, what does IP stand for?',
+      question: 'In rectangle ABCD, the diagonals AC and BD intersect at point E. If the area of the rectangle is 120 square units, what is the area of triangle EBC (the triangle with vertices E,B,C)?',
       options: [
-        'Internet Protocol',
-        'Internal Processing',
-        'Interface Program',
-        'Information Packet'
+        '30',
+        '40',
+        '60',
+        '20'
       ],
-      correctAnswer: 1,
-      category: 'Technical'
+      correctAnswer: 0,
+      category: 'General'
     },
     {
       id: '2',
-      question: 'Which programming paradigm focuses on objects and classes?',
+      question: 'What will the following code print in most C-like languages?',
       options: [
-        'Functional Programming',
-        'Procedural Programming',
-        'Object-Oriented Programming',
-        'Logic Programming'
-      ],
-      correctAnswer: 2,
-      category: 'Technical'
-    },
-    {
-      id: '3',
-      question: 'What does HTML stand for?',
-      options: [
-        'Hyper Text Markup Language',
-        'High Tech Modern Language',
-        'Home Tool Markup Language',
-        'Hyperlink and Text Markup Language'
+        '2',
+        '2.5',
+        '3',
+        'Error'
       ],
       correctAnswer: 0,
       category: 'Technical'
     },
     {
-      id: '4',
-      question: 'Which of the following is a version control system?',
+      id: '3',
+      question: 'In an ordered array, a search algorithm repeatedly divides the search interval in half until the target element is found or the interval becomes empty. What is the time complexity of this algorithm?',
       options: [
-        'MySQL',
-        'Git',
-        'Apache',
-        'Node.js'
-      ],
-      correctAnswer: 1,
-      category: 'Technical'
-    },
-    {
-      id: '5',
-      question: 'What is the time complexity of binary search?',
-      options: [
+        'O(1)',
         'O(n)',
         'O(log n)',
-        'O(n²)',
-        'O(1)'
-      ],
-      correctAnswer: 1,
-      category: 'Technical'
-    },
-    {
-      id: '6',
-      question: 'Which HTTP method is used to retrieve data?',
-      options: [
-        'POST',
-        'PUT',
-        'GET',
-        'DELETE'
+        'O(n log n)'
       ],
       correctAnswer: 2,
       category: 'Technical'
     },
     {
-      id: '7',
-      question: 'What does CSS stand for?',
-      options: [
-        'Computer Style Sheets',
-        'Cascading Style Sheets',
-        'Creative Style Sheets',
-        'Colorful Style Sheets'
-      ],
-      correctAnswer: 1,
-      category: 'Technical'
-    },
-    {
-      id: '8',
-      question: 'Which data structure follows LIFO principle?',
-      options: [
-        'Queue',
-        'Array',
-        'Stack',
-        'Linked List'
-      ],
-      correctAnswer: 2,
-      category: 'Technical'
-    },
-    {
-      id: '9',
-      question: 'What is the purpose of a database index?',
-      options: [
-        'To store data',
-        'To improve query performance',
-        'To backup data',
-        'To encrypt data'
-      ],
-      correctAnswer: 1,
-      category: 'Technical'
-    },
-    {
-      id: '10',
-      question: 'Which of the following is NOT a JavaScript framework?',
-      options: [
-        'React',
-        'Angular',
-        'Vue.js',
-        'Laravel'
-      ],
-      correctAnswer: 3,
-      category: 'Technical'
-    },
-    {
-      id: '12',
-      question: 'What is the output of: (Python Code Snippet) print(2 ** 3 ** 2)',
+      id: '4',
+      question: 'What is the output of: print(2 ** 3 ** 2)',
       options: [
         '64',
         '512',
         '256',
         '8'
       ],
-      correctAnswer: 2,
+      correctAnswer: 1,
       category: 'Technical'
     },
     {
-      id: '13',
-      question: 'Which of the following do not touch their hair in EB reel',
+      id: '5',
+      question: 'Which of the following represents a semantic HTML element?',
       options: [
-        'Abhinivesh Sharma',
-        'Lakshita Gupta',
-        'Bhavya',
-        'Haryiank Kumra'
+        '<div>',
+        '<section>',
+        '<span>',
+        '<b>'
       ],
       correctAnswer: 1,
       category: 'Technical'
     },
     {
-      id: '14',
-      question: 'Which of the following is a joint secretary of ISTE?',
+      id: '6',
+      question: 'Which CSS property is used to create rounded corners?',
       options: [
-        'Lakshita Gupta',
-        'Hariyank Kumra',
-        'Ishaan Sharma',
-        'Abhinivesh Sharma'
+        'border-width',
+        'border style',
+        'border-radius',
+        'border-round'
       ],
-      correctAnswer: 4,
+      correctAnswer: 2,
+      category: 'Technical'
+    },
+    {
+      id: '7',
+      question: 'In the context of web communication, when a client requests a resource that does not exist on the server, the server responds with which HTTP status code?',
+      options: [
+        '200',
+        '301',
+        '404',
+        '500'
+      ],
+      correctAnswer: 2,
+      category: 'Technical'
+    },
+    {
+      id: '8',
+      question: 'In JavaScript, == and === differ because:',
+      options: [
+        '== checks value only, === checks value + type',
+        '== checks type only, === checks value only',
+        'Both are identical',
+        '=== is only used in TypeScript'
+      ],
+      correctAnswer: 0,
+      category: 'Technical'
+    },
+    {
+      id: '9',
+      question: 'Which of the following is a non-volatile memory?',
+      options: [
+        'RAM',
+        'ROM',
+        'Cache',
+        'Register'
+      ],
+      correctAnswer: 1,
+      category: 'Technical'
+    },
+    {
+      id: '10',
+      question: 'FORLOOP',
+      options: [
+        '012',
+        '0123',
+        '123',
+        '0'
+      ],
+      correctAnswer: 0,
+      category: 'Technical'
+    },
+    {
+      id: '12',
+      question: 'In binary, what is the result of 1011 + 110?',
+      options: [
+        '10001',
+        '11001',
+        '10000',
+        '11101'
+      ],
+      correctAnswer: 0,
+      category: 'Technical'
+    },
+    {
+      id: '13',
+      question: 'If in a certain code “CAT” is written as “DBU”, then “DOG” will be coded as:',
+      options: [
+        'EPH',
+        'DPH',
+        'EOH',
+        'ENH'
+      ],
+      correctAnswer: 0,
+      category: 'General'
+    },
+    {
+      id: '14',
+      question: 'Which is greater: log₂(16) or log₃(27)?',
+      options: [
+        'log₂(16)',
+        'log₃(27)',
+        'Both equal',
+        'Cannot be compared'
+      ],
+      correctAnswer: 2,
       category: 'General'
     },
     {
       id: '15',
-      question: 'Which of the following is a Core Member?',
+      question: 'A person faces North, turns 90° clockwise, then 180° clockwise, and again 90° clockwise. Which direction is he facing now?',
       options: [
-        'Rudraksh',
-        'Navjot',
-        'Happy',
-        'Yuvraj'
+        'North',
+        'East',
+        'South',
+        'West'
       ],
-      correctAnswer: 4,
+      correctAnswer: 0,
+      category: 'General'
+    },
+    {
+      id: '16',
+      question: 'If 15 men can build a wall in 12 days, how many days will 10 men take?',
+      options: [
+        '12',
+        '15',
+        '18',
+        '20'
+      ],
+      correctAnswer: 2,
+      category: 'General'
+    },
+    {
+      id: '17',
+      question: 'The mean of five numbers is 20. If one number is excluded, the mean becomes 18. Find the excluded number.',
+      options: [
+        '30',
+        '32',
+        '28',
+        '26'
+      ],
+      correctAnswer: 0,
+      category: 'General'
+    },
+    {
+      id: '18',
+      question: 'If in a certain code, TABLE is written as YFQJK, how is CHAIR written in that code?',
+      options: [
+        'HMQWX',
+        'HMPWX',
+        'HMPWY',
+        'GMPWY'
+      ],
+      correctAnswer: 1,
+      category: 'General'
+    },
+    {
+      id: '19',
+      question: 'What is the sum of the squares of the roots of the equation x2−6x+8=0',
+      options: [
+        '20',
+        '34',
+        '28',
+        '16'
+      ],
+      correctAnswer: 2,
+      category: 'General'
+    },
+    {
+      id: '20',
+      question: 'Five people (A, B, C, D, E) are sitting in a row. A is to the left of B and right of C. D is to the right of E and left of A. Who is sitting in the middle?',
+      options: [
+        'A',
+        'B',
+        'C',
+        'D'
+      ],
+      correctAnswer: 3,
       category: 'General'
     },
   ],
