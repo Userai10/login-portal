@@ -82,9 +82,12 @@ export const testService = {
   },
 
   isTestAvailable: (): boolean => {
-    const settings = testService.getTestSettings();
-    return new Date() >= settings.testStartTime;
-  },
+  const settings = testService.getTestSettings();
+  const now = new Date();
+  const testEndWindow = new Date(settings.testStartTime.getTime() + 30 * 60 * 1000); // 30 minutes window
+  return now >= settings.testStartTime && now <= testEndWindow;
+},
+
   getTestEndTime: (): Date => {
     const settings = testService.getTestSettings();
     return new Date(settings.testStartTime.getTime() + settings.testDuration * 60 * 1000);
