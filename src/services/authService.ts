@@ -2,6 +2,7 @@ import {
   createUserWithEmailAndPassword, 
   signInWithEmailAndPassword, 
   signOut,
+  sendPasswordResetEmail,
   User,
   onAuthStateChanged
 } from 'firebase/auth';
@@ -129,6 +130,21 @@ export const authService = {
       await signOut(auth);
     } catch (error: any) {
       throw new Error(error.message || 'Logout failed');
+    }
+  },
+
+  async resetPassword(email: string) {
+    try {
+      await sendPasswordResetEmail(auth, email);
+    } catch (error: any) {
+      if (error.code === 'auth/user-not-found') {
+        throw new Error('No account found with this email address');
+      } else if (error.code === 'auth/invalid-email') {
+        throw new Error('Invalid email address');
+      } else if (error.code === 'auth/too-many-requests') {
+        throw new Error('Too many requests. Please try again later');
+      }
+      throw new Error(error.message || 'Failed to send password reset email');
     }
   },
 

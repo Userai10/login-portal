@@ -19,6 +19,11 @@ interface FormData {
 
 function App() {
   const [isLogin, setIsLogin] = useState(true);
+  const [showForgotPassword, setShowForgotPassword] = useState(false);
+  const [resetEmail, setResetEmail] = useState('');
+  const [resetMessage, setResetMessage] = useState('');
+  const [resetError, setResetError] = useState('');
+  const [isResetting, setIsResetting] = useState(false);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [currentUser, setCurrentUser] = useState<any>(null);
   const [userProfile, setUserProfile] = useState<UserProfile | null>(null);
@@ -143,10 +148,48 @@ function App() {
     setAuthError('');
   };
 
+  const handleForgotPassword = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setResetError('');
+    setResetMessage('');
+    
+    if (!resetEmail.trim()) {
+      setResetError('Email is required');
+      return;
+    }
+    
+    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(resetEmail)) {
+      setResetError('Please enter a valid email address');
+      return;
+    }
+    
+    setIsResetting(true);
+    
+    try {
+      await authService.resetPassword(resetEmail);
+      setResetMessage('Password reset email sent! Check your inbox and follow the instructions to reset your password.');
+      setResetEmail('');
+    } catch (error: any) {
+      setResetError(error.message);
+    } finally {
+      setIsResetting(false);
+    }
+  };
+
+  const handleBackToLogin = () => {
+    setShowForgotPassword(false);
+    setResetEmail('');
+    setResetMessage('');
+    setResetError('');
+  };
   const toggleMode = () => {
     setIsLogin(!isLogin);
     setErrors({});
     setAuthError('');
+    setShowForgotPassword(false);
+    setResetEmail('');
+    setResetMessage('');
+    setResetError('');
     setFormData({
       name: '',
       email: '',
