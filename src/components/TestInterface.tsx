@@ -49,7 +49,7 @@ const TestInterface: React.FC<TestInterfaceProps> = ({ user, userProfile, onTest
           
           if (newCount === 1) {
             setShowTabWarning(true);
-            setTimeout(() => setShowTabWarning(false), 5000); // Hide warning after 5 seconds
+            setTimeout(() => setShowTabWarning(false), 10000); // Hide warning after 10 seconds
           } else if (newCount > testSettings.maxTabSwitches) {
             // Cancel test
             await testService.cancelTest(user.uid);

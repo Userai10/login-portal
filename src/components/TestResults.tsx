@@ -68,7 +68,7 @@ const TestResults: React.FC<TestResultsProps> = ({ user, userProfile, currentRes
               </div>
               <div>
                 <h1 className="text-lg sm:text-xl font-bold text-white">Test Results</h1>
-                <p className="text-xs sm:text-sm text-gray-300">Recruitment Examination</p>
+                <p className="text-xs sm:text-sm text-gray-300">ISTE Recruitment Examination</p>
               </div>
             </div>
             
@@ -91,7 +91,7 @@ const TestResults: React.FC<TestResultsProps> = ({ user, userProfile, currentRes
             <CheckCircle className="w-10 sm:w-12 h-10 sm:h-12 text-white" />
           </div>
           <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-emerald-400 mb-6">
-            🎉 Test Submitted Successfully! 🎉
+            {/* 🎉 Test Submitted Successfully! 🎉 */}
           </h2>
           <p className="text-xl sm:text-2xl text-white mb-4 px-4 font-semibold">
             Congratulations, {userProfile.name}!

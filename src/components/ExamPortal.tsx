@@ -118,7 +118,7 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
     }
     
     if (userTestStatus?.isTestCancelled) {
-      alert('Your test has been cancelled due to policy violations.');
+      alert('Your test has been cancelled due to policy and continuos switching of tabs violations.');
       return;
     }
     
@@ -282,7 +282,7 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
               {userTestStatus?.isTestCancelled && (
                 <div className="mt-4 p-3 bg-red-500 bg-opacity-20 border border-red-500/30 rounded-lg">
                   <p className="text-red-400 text-sm">
-                    ✗ Test cancelled due to policy violations
+                    ✗ Test cancelled due to policy violations of continuos switching of tabs
                   </p>
                 </div>
               )}
@@ -303,7 +303,7 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
                   <ul className="space-y-3 text-sm sm:text-base text-gray-300">
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>The test duration is 60 minutes with 10 multiple-choice questions</span>
+                      <span>The test duration is 20 minutes with 20 multiple-choice questions</span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
@@ -316,6 +316,10 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
                       <span>Auto-submit will occur when time expires</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Submit Button is always available at top of portal</span>
                     </li>
                   </ul>
                 </div>
@@ -338,6 +342,10 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
                       <span>Use a desktop or laptop for the best experience</span>
+                    </li>
+                    <li className="flex items-start space-x-3">
+                      <div className="w-2 h-2 bg-cyan-400 rounded-full mt-2 flex-shrink-0"></div>
+                      <span>Do not switch tabs between test as this may lead to cancellation of test</span>
                     </li>
                   </ul>
                 </div>
