@@ -434,6 +434,19 @@ function App() {
                 {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
               </button>
             </div>
+
+            {/* Forgot Password Link (Login only) */}
+            {isLogin && (
+              <div className="text-center">
+                <button
+                  type="button"
+                  onClick={() => setShowForgotPassword(true)}
+                  className="text-gray-400 hover:text-gray-300 transition-colors duration-300 text-xs sm:text-sm"
+                >
+                  Forgot your password?
+                </button>
+              </div>
+            )}
           </form>
         </div>
       </div>
