@@ -497,15 +497,7 @@ function App() {
             </button>
 
             {/* Toggle Mode */}
-            <div className="text-center">
-              <button
-                type="button"
-                onClick={toggleMode}
-                className="text-blue-400 hover:text-blue-300 transition-colors duration-300 text-xs sm:text-sm"
-              >
-                {isLogin ? "Don't have an account? Sign up" : "Already have an account? Sign in"}
-              </button>
-            </div>
+            
 
             {/* Forgot Password Link (Login only) */}
             {isLogin && (
