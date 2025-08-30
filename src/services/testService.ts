@@ -360,7 +360,7 @@ export const testService = {
     },
     {
       id: '10',
-      question: 'for(int i=0; i<5; i++) {if(i==3) break;  System.out.print(i);',
+      question: 'What will be the output of the following Java code?\n\nfor(int i=0; i<5; i++){\n    if(i==3) break;\n    System.out.print(i);\n}',
       options: [
         '012',
         '0123',
