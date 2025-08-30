@@ -308,7 +308,7 @@ const ExamPortal: React.FC<ExamPortalProps> = ({ user, userProfile, onLogout }) 
                   <ul className="space-y-3 text-sm sm:text-base text-gray-300">
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
-                      <span>The test duration is 20 minutes with 20 multiple-choice questions</span>
+                      <span>The test duration is 15 minutes with 20 multiple-choice questions</span>
                     </li>
                     <li className="flex items-start space-x-3">
                       <div className="w-2 h-2 bg-blue-400 rounded-full mt-2 flex-shrink-0"></div>
