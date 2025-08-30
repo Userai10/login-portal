@@ -54,8 +54,8 @@ export interface UserTestStatus {
 }
 export const testService = {
   getTestSettings: (): TestSettings => ({
-    testStartTime: new Date('2025-08-30T12:27:00'), // 9:30 PM on Aug 30
-    testDuration: 15, // 15 minutes
+    testStartTime: new Date('2025-08-30T22:47:00'), // 9:30 PM on Aug 30
+    testDuration: 5, // 15 minutes
     maxTabSwitches: 5,
     isTestActive: true
   }),
