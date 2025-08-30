@@ -88,7 +88,7 @@ export const testService = {
 },
   getTestEndTime: (): Date => {
     const settings = testService.getTestSettings();
-    return new Date(settings.testStartTime.getTime() + 30 * 60 * 1000); // 30 minutes window to start
+    return new Date(settings.testStartTime.getTime() + 20 * 60 * 1000); // 30 minutes window to start
   },
   async getUserTestStatus(userId: string): Promise<UserTestStatus | null> {
     try {
