@@ -54,12 +54,11 @@ export interface UserTestStatus {
 }
 export const testService = {
   getTestSettings: (): TestSettings => ({
-    testStartTime: new Date('2025-08-30T11:36:00'), // 9:30 PM on Aug 30
+    testStartTime: new Date('2025-08-30T12:06:00'), // 9:30 PM on Aug 30
     testDuration: 15, // 15 minutes
     maxTabSwitches: 5,
     isTestActive: true
   }),
-
   // Fisher-Yates shuffle algorithm for randomizing questions
   shuffleQuestions: (questions: TestQuestion[], userId: string): TestQuestion[] => {
     // Use userId as seed for consistent randomization per user
@@ -80,16 +79,13 @@ export const testService = {
     
     return shuffled;
   },
-
   isTestAvailable: (): boolean => {
   const settings = testService.getTestSettings();
   const now = new Date();
   const start = settings.testStartTime;
   const end = new Date(start.getTime() + 30 * 60 * 1000); // 30 minutes after start
-
   return now >= start && now <= end;
 },
-
   getTestEndTime: (): Date => {
     const settings = testService.getTestSettings();
     return new Date(settings.testStartTime.getTime() + 30 * 60 * 1000); // 30 minutes window to start
@@ -264,7 +260,7 @@ export const testService = {
     },
     {
       id: '2',
-      question: 'What will the following code print in most C-like languages? int a=5/2; printf("%d",a);',
+      question: 'What will the following code print in most C-like languages?\n\n int a=5/2;\n printf("%d",a);',
       options: [
         '2',
         '2.5',
@@ -491,12 +487,10 @@ export const testService = {
       category: 'General'
     },
   ],
-
   getRandomizedTestQuestions: (userId: string): TestQuestion[] => {
     const baseQuestions = testService.getTestQuestions();
     return testService.shuffleQuestions(baseQuestions, userId);
   },
-
   async submitTestResult(testResult: Omit<TestResult, 'id'>): Promise<string> {
     try {
       // Mark test as submitted
