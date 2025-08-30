@@ -54,8 +54,8 @@ export interface UserTestStatus {
 }
 export const testService = {
   getTestSettings: (): TestSettings => ({
-    testStartTime: new Date('2025-08-30T03:17:00'), // Fixed start time for all users
-    testDuration: 10, // 10 minutes
+    testStartTime: new Date('2025-08-30T21:30:00'), // 9:30 PM on Aug 30
+    testDuration: 15, // 15 minutes
     maxTabSwitches: 5,
     isTestActive: true
   }),
@@ -92,7 +92,7 @@ export const testService = {
 
   getTestEndTime: (): Date => {
     const settings = testService.getTestSettings();
-    return new Date(settings.testStartTime.getTime() + settings.testDuration * 60 * 1000);
+    return new Date(settings.testStartTime.getTime() + 30 * 60 * 1000); // 30 minutes window to start
   },
   async getUserTestStatus(userId: string): Promise<UserTestStatus | null> {
     try {
