@@ -259,20 +259,20 @@ export const testService = {
       category: 'Technical'
     },
     {
-      id: '2',
-      question: `What will the following code print in most C-like languages?
+  id: '2',
+  question: `What will the following code print in most C-like languages?
 
-int a = 5 / 2;
-printf("%d", a);`,
-      options: [
-        '2',
-        '2.5',
-        '3',
-        'Error'
-      ],
-      correctAnswer: 0,
-      category: 'Technical'
-    },
+int a=5/2;
+printf("%d",a);`,
+  options: [
+    '2',
+    '2.5',
+    '3',
+    'Error'
+  ],
+  correctAnswer: 0,
+  category: 'Technical'
+},
     {
       id: '3',
       question: 'In an ordered array, a search algorithm repeatedly divides the search interval in half until the target element is found or the interval becomes empty. What is the time complexity of this algorithm?',
