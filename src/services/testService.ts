@@ -260,7 +260,10 @@ export const testService = {
     },
     {
       id: '2',
-      question: 'What will the following code print in most C-like languages?\n\n int a=5/2;\n printf("%d",a);',
+      question: `What will the following code print in most C-like languages?
+
+int a = 5 / 2;
+printf("%d", a);`,
       options: [
         '2',
         '2.5',
